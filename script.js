@@ -38,6 +38,8 @@ function showQuestion(question){
         }
         button.addEventListener('click', selectAnswer)
         answerButtonsElement.appendChild(button)
+        document.getElementById("question-container").style.backgroundImage = "img/url('"+question.imagem+"')";
+        console.log(document.getElementById("question-container").style.backgroundImage)
     })
 }
 
@@ -82,6 +84,18 @@ function clearStatusClass(element){
 
 const questions = [
     {
+        question: 'Quais as medidas são prevenção do coronavírus?', 
+        answers: [
+            {text: 'Lavar as mãos', correct: true },
+            {text: 'Andar sem máscara', correct: false },
+            {text: 'Ir em festas', correct: false },
+            {text: 'Sair de casa', correct: false },
+
+        ],
+        imagem: "coronavirusbe.jpg"
+        
+    },
+    {
         question: 'What is 2 + 2', 
         answers: [
             {text: '4', correct: true },
@@ -89,18 +103,8 @@ const questions = [
             {text: '8', correct: false },
             {text: '2', correct: false },
 
-        ]
-        
-    },
-    {
-         question: 'What is 2 + 2', 
-         answers: [
-            {text: '4', correct: true },
-            {text: '22', correct: false },
-            {text: '8', correct: false },
-            {text: '2', correct: false },
-
-    ]
+    ],
+        imagem: "coronga.jpg"
     
 },
 {
