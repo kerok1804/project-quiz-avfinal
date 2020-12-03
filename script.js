@@ -1,30 +1,34 @@
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
-const questionContainerElement = document.getElementById('question-container')
 
+const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
+
+let score = 0;
 
 let shuffleQuestions, currentQuestionIndex
 
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
-    setNextQuestion()
+    setNextQuestion(false)
 })
 
 function startGame(){
-    console.log('Started')
     startButton.classList.add('hide')
     shuffleQuestions = questions.sort(() => Math.random()  - .5)
     currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
-    setNextQuestion()
+    setNextQuestion(true)
 }
 
-function setNextQuestion(){
+function setNextQuestion(start){
     resetState()
     showQuestion(shuffleQuestions[currentQuestionIndex])
+    if(!start){
+        document.body.style.backgroundColor = "hsl(var(--hue-neutral), 100%, 20%)"
+    }
 }
 
 function showQuestion(question){
@@ -38,8 +42,9 @@ function showQuestion(question){
         }
         button.addEventListener('click', selectAnswer)
         answerButtonsElement.appendChild(button)
-        document.getElementById("question-container").style.backgroundImage = "img/url('"+question.imagem+"')";
-        console.log(document.getElementById("question-container").style.backgroundImage)
+        console.log("question.imagem -> " + question.imagem)
+        document.getElementById("eoq").style.backgroundImage = "url('img/"+question.imagem+"')";
+        console.log(document.getElementById("eoq").style)
     })
 }
 
@@ -53,14 +58,19 @@ function resetState(){
 function selectAnswer(e){
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
-    setStatusClass(document.body, correct)
+    if(correct){
+        score++
+        document.body.style.backgroundColor = "hsl(var(--hue-correct), 100%, 20%)"
+    } else {
+        document.body.style.backgroundColor = "hsl(var(--hue-wrong), 100%, 20%)"
+    }
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
     if(shuffleQuestions.length > currentQuestionIndex + 1){
         nextButton.classList.remove('hide')
     } else {
-        startButton.innerText = 'Restart'
+        startButton.innerText = 'Score: ' + score
         startButton.classList.remove('hide')
     }
    
@@ -92,30 +102,33 @@ const questions = [
             {text: 'Sair de casa', correct: false },
 
         ],
-        imagem: "coronavirusbe.jpg"
+        imagem: "coronga.jpg",
+        
         
     },
     {
-        question: 'What is 2 + 2', 
+        question: 'O que fazer para conviver em sociedade fora de casa?', 
         answers: [
-            {text: '4', correct: true },
-            {text: '22', correct: false },
-            {text: '8', correct: false },
-            {text: '2', correct: false },
+            {text: 'Abraçar pessoas', correct: false },
+            {text: 'Manter distância', correct: true },
+            {text: 'Visitar amigos', correct: false },
+            {text: 'Ir viajar', correct: false },
 
     ],
-        imagem: "coronga.jpg"
+    imagem: "coronavirusbe.jpg",
     
-},
-{
-         question: 'What is 2 + 2', 
+    
+    },
+    {
+         question: 'O  que você deve levar consigo ao sair de casa?', 
          answers: [
-            {text: '4', correct: true },
-            {text: '22', correct: false },
-            {text: '8', correct: false },
-            {text: '2', correct: false },
+            {text: 'Pano de rosto', correct: false },
+            {text: 'Animais', correct: false },
+            {text: 'Alcóol em gel', correct: true },
+            {text: 'Caneta', correct: false },
 
-    ]
+    ],
+    image: "iStock-177257849.jpg"
     
 },
 {
