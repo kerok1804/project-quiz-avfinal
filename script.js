@@ -176,7 +176,7 @@ const questions = [
             {text: 'Perda de unhas', correct: false },
 
         ],
-        imagem: "mulher-tossindo-1584638323860_v2_450x337.png"
+        imagem: "mulher-tossindo-1584638323860_v2_450x337.png",
 
 },
     {
@@ -187,29 +187,32 @@ const questions = [
             {text: 'Procurar um médico imediatamente', correct: true },
             {text: 'Praticar exercícios', correct: false },
 
-    ]
+    ],
+    imagem: "coronavirus---orientacoes.jpg",
     
 },
 {
-        question: 'What is 2 + 2', 
+        question: 'O que fazer se estiver indisposto?', 
          answers: [
-            {text: '4', correct: true },
-            {text: '22', correct: false },
-            {text: '8', correct: false },
-            {text: '2', correct: false },
+            {text: 'Caminhar', correct: false },
+            {text: 'Viajar', correct: false },
+            {text: 'Se isolar em casa', correct: true },
+            {text: 'Trabalhar fora de casa', correct: false },
 
-    ]
+    ],
+    imagem: "covid-19-4992201_1920.jpg"
     
 },
 {
-         question: 'What is 2 + 2', 
+         question: 'Qual o costume tem que se fazer ao frequentar um lugar com muitas pessoas?', 
         answers: [
-            {text: '4', correct: true },
-            {text: '22', correct: false },
-            {text: '8', correct: false },
-            {text: '2', correct: false },
+            {text: 'Tirar a máscara', correct: false },
+            {text: 'Usar frequentemente alcóol em gel', correct: true },
+            {text: 'Não lavar as mãos', correct: false },
+            {text: 'Encostar em lugares contaminados', correct: false },
 
-    ]
+    ],
+    imagem: "04.jpg"
     
 },
 
