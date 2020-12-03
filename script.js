@@ -43,8 +43,8 @@ function showQuestion(question){
         button.addEventListener('click', selectAnswer)
         answerButtonsElement.appendChild(button)
         console.log("question.imagem -> " + question.imagem)
-        document.getElementById("eoq").style.backgroundImage = "url('img/"+question.imagem+"')";
-        console.log(document.getElementById("eoq").style)
+        document.getElementById("fundo").style.backgroundImage = "url('img/"+question.imagem+"')";
+        console.log(document.getElementById("fundo").style)
     })
 }
 
@@ -128,60 +128,64 @@ const questions = [
             {text: 'Caneta', correct: false },
 
     ],
-    image: "iStock-177257849.jpg"
+    imagem: "iStock-177257849.jpg",
     
-},
-{
-        question: 'What is 2 + 2', 
+    },
+    {
+        question: 'Algo que devemos usar diariamente e que mudou nosso cotidiano.', 
         answers: [
-            {text: '4', correct: true },
-            {text: '22', correct: false },
-            {text: '8', correct: false },
-            {text: '2', correct: false },
+            {text: 'Notebook', correct: false },
+            {text: 'Celular', correct: false },
+            {text: 'Máscara', correct: true },
+            {text: 'Fones de ouvido', correct: false },
 
-    ]
+    ],
+    imagem: "epidemia-pessoas-com-mascara-1589551870401_v2_1920x1280.jpg",
     
-},
-{
-         question: 'What is 2 + 2', 
+    },
+    {
+     question: 'O que não fazer usando máscara?', 
         answers: [
-            {text: '4', correct: true },
-            {text: '22', correct: false },
-            {text: '8', correct: false },
-            {text: '2', correct: false },
+            {text: 'Tocar no rosto', correct: true },
+            {text: 'Trocar a cada 5 minutos', correct: false },
+            {text: 'Compartilhar com outras pessoas', correct: true },
+            {text: 'Cortar no meio', correct: true },
 
-    ]
+    ],
+    imagem: "pessoas-usando-mascaras-para-se-proteger-do-coronavirus-269022-article.jpg",
     
-},
-{
-        question: 'What is 2 + 2', 
+    },
+    {
+        question: 'O que fazer ao querer tossir ou espirrar?', 
         answers: [
-            {text: '4', correct: true },
-            {text: '22', correct: false },
-            {text: '8', correct: false },
-            {text: '2', correct: false },
+            {text: 'Não colocar a mão no rosto', correct: false },
+            {text: 'Tossir ou espirrar no cotovelo', correct: true },
+            {text: 'Espirrar em alguém', correct: false },
+            {text: 'Espirrar nas mãos', correct: false },
 
-    ]
+    ],
+    imagem: "coronavirus-2.jpg"
     
-},
-{
-        question: 'What is 2 + 2', 
+    },
+    {
+        question: 'Quais os principais sintomas da COVID-19?', 
         answers: [
-            {text: '4', correct: true },
-            {text: '22', correct: false },
-            {text: '8', correct: false },
-            {text: '2', correct: false },
+            {text: 'Nariz entopido', correct: false },
+            {text: 'Perda de olfato e paladar', correct: true },
+            {text: 'Perda de membros', correct: false },
+            {text: 'Perda de unhas', correct: false },
 
-    ]
-    
+        ],
+        imagem: "mulher-tossindo-1584638323860_v2_450x337.png"
+
 },
-{
-        question: 'What is 2 + 2', 
+    {
+        question: 'O que fazer se tiver sintomas da COVID-19 e não sabe o que fazer?', 
          answers: [
-            {text: '4', correct: true },
-            {text: '22', correct: false },
-            {text: '8', correct: false },
-            {text: '2', correct: false },
+            {text: 'Ver amigos e familiares', correct: false },
+            {text: 'Ir ao shopping', correct: false },
+            {text: 'Procurar um médico imediatamente', correct: true },
+            {text: 'Praticar exercícios', correct: false },
 
     ]
     
